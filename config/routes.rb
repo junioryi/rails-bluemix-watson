@@ -1,4 +1,7 @@
 Blog::Application.routes.draw do
+  resources :ideas
+
+
   resources :posts
   
   root :to => 'posts#index'
