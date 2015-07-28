@@ -1,11 +1,11 @@
 applications:
 - services:
-  - blogSQLDB
+  - Blog_SQLDB
   disk_quota: 1024M
-  host: blograils
-  name: blograils
+  host: testonblog
+  name: testonblog
   path: .
-  domain: ng.bluemix.net
+  domain: mybluemix.net
   instances: 1
   memory: 256M
   buildpack: https://github.com/ibmdb/db2rubybuildpack
