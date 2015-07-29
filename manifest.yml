@@ -1,6 +1,7 @@
 applications:
 - services:
   - Blog_SQLDB
+  - AlchemyAPI
   disk_quota: 1024M
   host: testonblog
   name: testonblog

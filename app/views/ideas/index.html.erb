@@ -5,8 +5,10 @@
     <th>Name</th>
     <th>Description</th>
     <th>Picture</th>
-    <th></th>
-    <th></th>
+    <th>Keywork1</th>
+    <th>Score1</th>
+    <th>Keyword2</th>
+    <th>Score2</th>
     <th></th>
   </tr>
 
@@ -15,6 +17,10 @@
     <td><%= idea.name %></td>
     <td><%= idea.description %></td>
     <td><%= idea.picture %></td>
+    <td><%= idea.keyword1 %></td>
+    <td><%= idea.score1 %></td>
+    <td><%= idea.keyword2 %></td>
+    <td><%= idea.score2 %></td>
     <td><%= link_to 'Show', idea %></td>
     <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
     <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
