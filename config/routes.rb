@@ -1,9 +1,14 @@
 Blog::Application.routes.draw do
-  resources :ideas
+  resources :ideas do
+    get 'getkey', :on => :member 
+  end
+
+  match 'idea/getkey/:idea_id', :controller => 'ideas', :action => 'getkey'
 
   resources :posts
   
   root :to => 'ideas#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

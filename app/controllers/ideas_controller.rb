@@ -80,4 +80,41 @@ class IdeasController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # GET /ideas/getKey/1
+  def getkey
+    require './alchemyapi'
+    alchemyapi = AlchemyAPI.new()
+
+    @idea = Idea.find(params[:id])
+
+    image_file = File.binread("public#{@idea.picture_url}")
+    response = alchemyapi.image_tag('image', '', { 'imagePostMode'=>'raw'}, image_file)
+
+    puts '###### result from alchemyapi ######'
+    puts response['status']
+    puts ''
+    if response.key?('imageKeywords')
+        puts 'Keywords:'
+        for keyword in response['imageKeywords']
+            puts "\ttext: " + keyword['text']
+            puts "\tscore: " + keyword['score']
+        end
+    end
+    puts ''
+
+    respond_to do |format|
+      format.html # getkey.html.erb
+    end
+  end
 end
+
+
+
+
+
+
+
+
+
+
