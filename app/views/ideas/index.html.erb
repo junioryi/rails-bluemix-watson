@@ -1,34 +1,42 @@
-<h1>Listing ideas</h1>
+<div class="container">
+<h1>Upload an image, and Alchemy will guess what it is</h1>
+</ br>
+<h4 >Click <mark>"GetKey"</mark></h3>
+</ br>
+<p class="bg-info"> It takes a while when click on "GetKey" (Depends on img size).</p>
+</div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Picture</th>
-    <th>Keywork1</th>
-    <th>Score1</th>
-    <th>Keyword2</th>
-    <th>Score2</th>
-    <th></th>
-  </tr>
+<div class="container">
+  <table class="table table-hover">
+    <thead>      
+      <tr>
+        <th>Picture</th>
+        <th>Keywork1</th>
+        <th>Score1</th>
+        <th>Keyword2</th>
+        <th>Score2</th>
+        <th></th>
+      </tr>
+    </thead>
 
-<% @ideas.each do |idea| %>
-  <tr>
-    <td><%= idea.name %></td>
-    <td><%= idea.description %></td>
-    <td><%= idea.picture %></td>
-    <td><%= idea.keyword1 %></td>
-    <td><%= idea.score1 %></td>
-    <td><%= idea.keyword2 %></td>
-    <td><%= idea.score2 %></td>
-    <td><%= link_to 'Show', idea %></td>
-    <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
-    <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <td><%= link_to 'GetKey', getkey_idea_path(idea) %></td>
-  </tr>
-<% end %>
-</table>
+    <tbody>
+    <% @ideas.each do |idea| %>
+      <tr>
+        <td><%= idea.picture %></td>
+        <td><%= idea.keyword1 %></td>
+        <td><%= idea.score1 %></td>
+        <td><%= idea.keyword2 %></td>
+        <td><%= idea.score2 %></td>
+        <td><%= link_to 'Show', idea %></td>
+        <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
+        <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'GetKey', getkey_idea_path(idea) %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br />
 
-<%= link_to 'New Idea', new_idea_path %>
+<%= link_to 'New Image', new_idea_path, :class => "btn btn-warning" %>

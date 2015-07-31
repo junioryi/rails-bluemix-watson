@@ -12,10 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :picture %><br />
-    <%= f.file_field :picture %>
+    <div class="wrapper">
+      <%= f.file_field :picture, {:class => "big"} %>
+    </div>
+    <button type="button" class="btn btn-info">Browse...</button>
   </div>
   <div class="actions">
-    <%= f.submit %>
+      <%= f.submit 'Submit', :class => "btn btn-default" %>
   </div>
 <% end %>

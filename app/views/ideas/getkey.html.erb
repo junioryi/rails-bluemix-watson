@@ -1,27 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-
+<div class="col-md-12">
 <p>
-  <b>Picture:</b>
-  <%= image_tag(@idea.picture_url, :width => 600) if @idea.picture.present? %>
+<%= image_tag(@idea.picture_url, :width => 400, :class => "img-rounded center-block", :alt => "Cinque Terre") if @idea.picture.present? %>
 </p>
+</ br>
+</div>
 
-<p> 
-  <strong> Key1: </strong>
-  <%= @idea.keyword1 %> 
-</p>
-<p> 
-  <strong> score1: </strong>
-  <%= @idea.score1 %> 
-</p>
-<p> 
-  <strong> Key2: </strong>
-  <%= @idea.keyword2 %> 
-</p>
-<p> 
-  <strong> score2: </strong>
-  <%= @idea.score2 %> 
-</p>
+<div class="col-md-12 set-center">
+<% unless @idea.keyword1.nil? %>
+<h1 class="center-block">Is it a <%= @idea.keyword1 %> ?</h1>
+<h4 class="center-block">We are <%= @idea.score1 %> sure.</h3>
+<% end %>
+<% unless @idea.keyword2.nil? %>
+<h2 class="center-block">Or is it a <%= @idea.keyword2 %> ?</h1>
+<h4 class="center-block">We are <%= @idea.score2 %> sure.</h3>
+<% end %>
 
 <%= link_to 'Edit', edit_idea_path(@idea) %> |
 <%= link_to 'Back', ideas_path %>
+</div>

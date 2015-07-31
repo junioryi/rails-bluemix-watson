@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TestProject</title>
-  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css">
-  <link rel="stylesheet" href="//railsgirls.oom/assets/bootstrap-theme.css">
+  <title>Alchemy on Bluemix</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -12,17 +15,11 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 <div class="container">
   <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="/">The Idea app</a>
+    <a class="navbar-brand" href="/">Alchemy on Bluemix</a>
   </div>
   <div class="collapse navbar-collapse">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/ideas">Ideas</a></li>
+      <li class="active"><a href="/ideas">Images</a></li>
     </ul>
   </div>
 </div>
@@ -30,11 +27,15 @@
 <div class="container">
 <%= yield %>
 </div>
-<footer>
+
+<div class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">
-    Footer
+      <p class="navbar-text pull-left">This project is built by IBM Taiwan interns. 2015/08</p>
+      <a href="http://www.alchemyapi.com/" class="navbar-btn btn-warning btn pull-right">Alchemy</a>
+      <a href="https://console.ng.bluemix.net/" class="navbar-btn btn-info btn pull-right">Bluemix</a>
   </div>
-</footer>
-<script src="//railsgirls.com/assets/bootstrap.js"></srcipt>
+</div>
+
+
 </body>
 </html>

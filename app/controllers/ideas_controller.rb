@@ -16,6 +16,7 @@ class IdeasController < ApplicationController
     @idea = Idea.find(params[:id])
 
     respond_to do |format|
+      #format.html { redirect_to action: "getkey", id: @idea.id }
       format.html # show.html.erb
       format.json { render json: @idea }
     end
@@ -44,7 +45,8 @@ class IdeasController < ApplicationController
 
     respond_to do |format|
       if @idea.save
-        format.html { redirect_to @idea, notice: 'Idea was successfully created.' }
+        #format.html { redirect_to @idea, notice: 'Idea was successfully created.' }
+        format.html { redirect_to action: "getkey", id: @idea.id }
         format.json { render json: @idea, status: :created, location: @idea }
       else
         format.html { render action: "new" }
