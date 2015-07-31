@@ -96,13 +96,24 @@ class IdeasController < ApplicationController
     puts ''
     if response.key?('imageKeywords')
         puts 'Keywords:'
+        @i = 1
         for keyword in response['imageKeywords']
             puts "\ttext: " + keyword['text']
             puts "\tscore: " + keyword['score']
+            if @i == 1 
+                @idea.attributes = ({ :keyword1 => keyword['text'], :score1 => keyword['score'] })
+            end
+            if @i == 2 
+                @idea.attributes = ({ :keyword2 => keyword['text'], :score2 => keyword['score'] })
+            end
+            @i += 1
         end
+        @idea.save
     end
+    puts '####################################'
     puts ''
-
+    
+    
     respond_to do |format|
       format.html # getkey.html.erb
     end
