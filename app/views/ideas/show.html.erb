@@ -2,6 +2,7 @@
 
 <p>
 <%= image_tag(@idea.picture_url, :width => 400, :class => "img-rounded center-block", :alt => "Cinque Terre") if @idea.picture.present? %>
+</ br>
 </p>
 
 <div class="col-md-12 set-center">
@@ -12,6 +13,9 @@
 <% unless @idea.keyword2.nil? %>
 <h2 class="center-block">Or is it a <%= @idea.keyword2 %> ?</h1>
 <h4 class="center-block">We are <%= @idea.score2 %> sure.</h3>
+<% end %>
+<% if @idea.keyword1.nil? and @idea.keyword2.nil? %>
+<h2 class="center-block">Hmm...we don't know what it is...</h1>
 <% end %>
 
 

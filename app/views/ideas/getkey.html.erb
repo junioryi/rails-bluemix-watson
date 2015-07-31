@@ -16,6 +16,9 @@
 <h2 class="center-block">Or is it a <%= @idea.keyword2 %> ?</h1>
 <h4 class="center-block">We are <%= @idea.score2 %> sure.</h3>
 <% end %>
+<% if @idea.keyword1.nil? and @idea.keyword2.nil? %>
+<h2 class="center-block">Hmm...we don't know what it is...</h1>
+<% end %>
 
 <%= link_to 'Edit', edit_idea_path(@idea) %> |
 <%= link_to 'Back', ideas_path %>
